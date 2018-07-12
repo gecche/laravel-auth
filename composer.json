@@ -1,0 +1,25 @@
+{
+    "name": "cupparis/auth",
+    "description": "Cupparis auth package extending laravel auth package with verification and activation of users",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Giacomo Terreni",
+            "email": "giacomo.terreni@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Cupparis\\Auth\\": "src"
+        }
+    },
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/contracts": "5.0.*",
+        "illuminate/http": "5.0.*",
+        "illuminate/session": "5.0.*",
+        "illuminate/support": "5.0.*",
+        "nesbot/carbon": "~1.0"
+    }
+}
