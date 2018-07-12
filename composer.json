@@ -1,0 +1,27 @@
+{
+    "name": "gecche/laravel-auth",
+    "description": "Extended Laravel Auth with verification email",
+    "keywords": ["laravel", "auth", "verification"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Giacomo Terreni",
+            "email": "giacomo.terreni@gmail.com"
+        }
+    ],
+    "require": {
+        "laravel/framework": "5.5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gecche\\Auth\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+
+            ]
+        }
+    }
+}
