@@ -1,0 +1,32 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Email Verified</div>
+
+                <div class="panel-body">
+                    <h3>
+                        Thank you! Your email address is now verified.<br/>
+                        @if ($goLogin)
+                        You can now login to our platform.
+                        @else
+                        Before to login to our platform, you must wait for administration approval of your account.
+                        @endif
+                    </h3>
+
+                    @if ($goLogin)
+                    <div class="col-md-6 col-md-offset-4">
+                         <a href="{{ route('login') }}" class="btn btn-primary">
+                            Go to Login page
+                         </a>
+                    </div>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

@@ -1,0 +1,19 @@
+{
+    "name": "gecche/laravel-auth",
+    "description": "This Auth package extends the Illuminate Auth package by adding verification adn activation attributes to users.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Giacomo Terreni",
+            "email": "giacomo.terreni@gmail.com"
+        }
+    ],
+    "require": {
+        "laravel/framework": "5.5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gecche\\Auth\\": ""
+        }
+    }
+}

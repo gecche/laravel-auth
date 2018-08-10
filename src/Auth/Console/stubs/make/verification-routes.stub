@@ -1,0 +1,6 @@
+
+// Verification Routes...
+Route::get('verification/resend', 'Auth\LostVerificationController@showLinkRequestForm')->name('verification.request');
+Route::post('verification/email', 'Auth\LostVerificationController@sendVerificationEmail')->name('verification.email');
+Route::get('verification/verify/{token}', 'Auth\VerificationController@verify')->name('verification.verify');
+
