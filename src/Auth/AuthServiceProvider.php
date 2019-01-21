@@ -2,6 +2,7 @@
 
 namespace Gecche\Auth;
 
+use Gecche\Auth\Console\ClearVerificationsCommand;
 use Gecche\Auth\Contracts\Authenticatable as AuthenticatableContract;
 use Gecche\Auth\Console\AuthMakeCommand;
 
@@ -55,11 +56,18 @@ class AuthServiceProvider extends \Illuminate\Auth\AuthServiceProvider
             return new AuthMakeCommand;
         });
 
-        $this->loadMigrationsFrom(__DIR__.'/../../res/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../migrations');
 
         $this->publishes([
-            __DIR__.'/../../res/config/auth-verification.php' => config_path('auth-verification.php'),
+            __DIR__.'/../config/auth-verification.php' => config_path('auth-verification.php'),
         ]);
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                ClearVerificationsCommand::class,
+            ]);
+        }
+
     }
 
 }

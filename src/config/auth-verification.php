@@ -18,7 +18,7 @@ return [
     |
     */
 
-    'passwords' => [
+    'verification' => [
         'users' => [
             'provider' => 'users',
             'table' => 'email_verifications',

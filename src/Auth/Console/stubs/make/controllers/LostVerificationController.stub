@@ -3,6 +3,7 @@
 namespace {{namespace}}Controllers\Auth;
 
 use Gecche\Auth\Foundation\SendsVerificationEmails;
+use App\Http\Controllers\Controller;
 
 class LostVerificationController extends Controller
 {

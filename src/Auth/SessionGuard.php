@@ -2,17 +2,12 @@
 
 namespace Gecche\Auth;
 
-use Illuminate\Support\Traits\Macroable;
 use Illuminate\Contracts\Session\Session;
 use Gecche\Auth\Contracts\UserProvider;
-use Illuminate\Contracts\Auth\StatefulGuard;
 use Symfony\Component\HttpFoundation\Request;
-use Illuminate\Contracts\Auth\SupportsBasicAuth;
 
-class SessionGuard extends \Illuminate\Auth\SessionGuard implements StatefulGuard, SupportsBasicAuth
+class SessionGuard extends \Illuminate\Auth\SessionGuard
 {
-    use GuardHelpers, Macroable;
-
     /**
      * Create a new authentication guard.
      *

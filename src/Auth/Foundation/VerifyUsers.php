@@ -1,4 +1,4 @@
-<?php namespace Gecche\Foundation\Auth;
+<?php namespace Gecche\Auth\Foundation;
 
 use Gecche\Auth\Facades\Verification;
 use Gecche\Auth\Events\Verificated;

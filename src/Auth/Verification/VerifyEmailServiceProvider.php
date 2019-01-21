@@ -42,30 +42,6 @@ class VerifyEmailServiceProvider extends ServiceProvider {
 	}
 
     /**
-     * Register the token repository implementation.
-     *
-     * @return void
-     */
-    protected function registerTokenRepository()
-    {
-        $this->app->singleton('auth.verification.tokens', function($app)
-        {
-            $connection = $app['db']->connection();
-
-            // The database token repository is an implementation of the token repository
-            // interface, and is responsible for the actual storing of auth tokens and
-            // their e-mail addresses. We will inject this table and hash key to it.
-            $table = $app['config']['auth.verification.table'];
-
-            $key = $app['config']['app.key'];
-
-            $expire = $app['config']->get('auth.verification.expire', 60);
-
-            return new DbRepository($connection, $table, $key, $expire);
-        });
-    }
-
-    /**
 	 * Get the services provided by the provider.
 	 *
 	 * @return array
