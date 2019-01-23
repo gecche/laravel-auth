@@ -110,7 +110,7 @@ class VerificationBrokerManager implements FactoryContract
      */
     protected function getConfig($name)
     {
-        return $this->app['config']["auth.verification.{$name}"];
+        return $this->app['config']["auth-verification.verification.{$name}"];
     }
 
     /**
@@ -120,7 +120,7 @@ class VerificationBrokerManager implements FactoryContract
      */
     public function getDefaultDriver()
     {
-        return $this->app['config']['auth.defaults.verification'];
+        return $this->app['config']['auth-verification.defaults.verification'];
     }
 
     /**
@@ -131,7 +131,7 @@ class VerificationBrokerManager implements FactoryContract
      */
     public function setDefaultDriver($name)
     {
-        $this->app['config']['auth.defaults.verification'] = $name;
+        $this->app['config']['auth-verification.defaults.verification'] = $name;
     }
 
     /**

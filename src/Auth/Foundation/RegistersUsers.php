@@ -1,6 +1,6 @@
 <?php
 
-namespace Gecche\Foundation\Auth;
+namespace Gecche\Auth\Foundation;
 
 use Gecche\Auth\Foundation\SendsVerificationEmails;
 use Illuminate\Http\Request;

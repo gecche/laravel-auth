@@ -2,6 +2,8 @@
 
 namespace Gecche\Auth\Facades;
 
+use Illuminate\Support\Facades\Facade;
+
 /**
  * @see \Illuminate\Auth\Passwords\PasswordBroker
  */
