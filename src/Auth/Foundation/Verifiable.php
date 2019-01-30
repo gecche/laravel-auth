@@ -36,7 +36,7 @@ trait Verifiable {
     }
 
     /**
-     * Get the e-mail address where password reset links are sent.
+     * Get the e-mail address where verification links are sent.
      *
      * @return string
      */
@@ -46,14 +46,14 @@ trait Verifiable {
     }
 
     /**
-     * Send the password reset notification.
+     * Send the verification notification.
      *
      * @param  string  $token
      * @return void
      */
     public function sendVerificationNotification($token)
     {
-        $this->notify(new VerificationNotification($token));
+        $this->notify(new VerificationNotification($this->getEmailForVerification(),$token));
     }
 
 }

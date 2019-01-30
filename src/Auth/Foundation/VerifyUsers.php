@@ -13,13 +13,13 @@ trait VerifyUsers
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
      */
-    public function verify(Request $request)
+    public function verify(Request $request, $email = null, $token = null)
     {
 
-        $this->validate($request, $this->rules(), $this->validationErrorMessages());
+//        $this->validate($request, $this->rules(), $this->validationErrorMessages());
 
         $response = $this->broker()->verify(
-            $this->credentials($request), function ($user, $verificationValue) {
+            ['email' => $email,'token' => $token], function ($user, $verificationValue) {
             $this->verifyUser($user, $verificationValue);
         }
         );
@@ -71,18 +71,18 @@ trait VerifyUsers
         return [];
     }
 
-    /**
-     * Get the email verification credentials from the request.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return array
-     */
-    protected function credentials(Request $request)
-    {
-        return $request->only(
-            'email', 'token'
-        );
-    }
+//    /**
+//     * Get the email verification credentials from the request.
+//     *
+//     * @param  \Illuminate\Http\Request $request
+//     * @return array
+//     */
+//    protected function credentials(Request $request)
+//    {
+//        return $request->only(
+//            'email', 'token'
+//        );
+//    }
 
 
     /**

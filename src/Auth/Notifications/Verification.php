@@ -20,8 +20,9 @@ class Verification extends Notification
      * @param  string  $token
      * @return void
      */
-    public function __construct($token)
+    public function __construct($email,$token)
     {
+        $this->email = $email;
         $this->token = $token;
     }
 
@@ -47,7 +48,7 @@ class Verification extends Notification
         return (new MailMessage)
             ->line('You are receiving this email because a new account has been created ')
             ->line('and your email address must be verified in order to use our systems.')
-            ->action('Verify email', url(config('app.url').route('verification.verify', $this->token, false)))
+            ->action('Verify email', url(config('app.url').route('verification.verify', [$this->email,$this->token], false)))
             ->line('If you have already verified your email address, no further action is required.');
     }
 }
