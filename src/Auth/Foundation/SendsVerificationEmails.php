@@ -59,7 +59,7 @@ trait SendsVerificationEmails
      */
     protected function sendVerificationResponse($request, $response)
     {
-        return redirect($this->redirectVerificationPath())->with('status',trans($response,['email'=>$request->get('email',"")]));
+        return redirect($this->redirectVerificationPath())->with('status',trans('register.'.$response,['email'=>$request->get('email',"")]));
     }
 
     /**
@@ -97,6 +97,6 @@ trait SendsVerificationEmails
             return $this->redirectVerificationTo();
         }
 
-        return property_exists($this, 'redirectVerificationTo') ? $this->redirectVerificationTo : '/login';
+        return property_exists($this, 'redirectVerificationTo') ? $this->redirectVerificationTo : '/register';
     }
 }

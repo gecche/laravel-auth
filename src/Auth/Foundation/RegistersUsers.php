@@ -26,24 +26,17 @@ trait RegistersUsers
 
         event(new Registered($user = $this->create($request->all())));
 
-        $this->guard()->login($user);
-
-        return $this->registered($request, $user)
-                    ?: ($this->verificationStep($request, $user)
-                        ?: redirect($this->redirectPath())->with('status',trans('register.registered')));
-    }
-
-
-    protected function verificationStep($request, $user) {
-
         if (!$user->getAuthVerified()) {
 
             return $this->sendVerificationEmail($request);
 
-
         }
 
+        $this->guard()->login($user);
 
+        return $this->registered($request, $user)
+                        ? redirect($this->redirectPath())->with('status',trans('register.registered'))
+                : redirect($this->redirectPath())->with('status',trans('register.unregistered'));
     }
 
 
