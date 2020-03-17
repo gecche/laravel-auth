@@ -77,7 +77,7 @@ class AuthMakeCommand extends Command
 
             file_put_contents(
                 base_path('routes/web.php'),
-                file_get_contents(__DIR__.'/stubs/make/verification-routes.stub'),
+                file_get_contents(__DIR__ . '/stubs/make/verification-routes.stub'),
                 FILE_APPEND
             );
         }
@@ -120,7 +120,7 @@ class AuthMakeCommand extends Command
             }
 
             copy(
-                __DIR__.'/stubs/make/views/'.$key,
+                __DIR__ . '/stubs/make/views/' .$key,
                 $view
             );
         }
@@ -136,7 +136,7 @@ class AuthMakeCommand extends Command
         return str_replace(
             '{{namespace}}',
             $this->getAppNamespace(),
-            file_get_contents(__DIR__.'/stubs/make/controllers/'.$controllerFile.'.stub')
+            file_get_contents(__DIR__ . '/stubs/make/controllers/' .$controllerFile.'.stub')
         );
     }
 }
