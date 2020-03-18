@@ -56,7 +56,7 @@ class AuthServiceProvider extends \Illuminate\Auth\AuthServiceProvider
             return new AuthMakeCommand;
         });
 
-        $this->loadMigrationsFrom(__DIR__ . '/../migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/migrations');
 
         $this->publishes([
             __DIR__ . '/../config/auth-verification.php' => config_path('auth-verification.php'),
